@@ -1,0 +1,11 @@
+@import "../../../variable.scss";
+
+.home {
+  margin-top: 140px;
+  padding: $padding;
+
+  @include tablet {
+    margin-top: 240px;
+    padding: 0 10px;
+  }
+}

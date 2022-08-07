@@ -1,0 +1,20 @@
+@import "../../../variable.scss";
+
+.search {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin-top: 140px;
+  padding: $padding;
+  opacity: 1;
+  gap: 16px;
+
+  &:hover .content__item {
+    opacity: 0.2;
+  }
+
+  @include tablet {
+    margin-top: 240px;
+    padding: 0 10px;
+  }
+}

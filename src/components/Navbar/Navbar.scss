@@ -1,0 +1,60 @@
+@import "../../variable.scss";
+
+.navbar {
+  position: fixed;
+  background-color: black;
+  @include flex(center, unset, 30px);
+  padding: $padding;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  
+  @include mobile {
+    flex-direction: column;
+    @include flex(center, unset, 30px);
+    padding: 20px;
+  }
+}
+
+.navbar__img {
+  & img {
+    max-width: 120px;
+    max-height: 80px;
+  }
+}
+
+.navbar__wrap {
+  @include flex(center, unset, 6px);
+  position: relative;
+  color: $text-color;
+}
+
+.navbar__icon {
+  position: absolute;
+  font-size: 2rem;
+  left: 6px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.navbar__inp {
+  font-size: 1.6rem;
+  width: 0;
+  padding: 8px 10px 8px 30px;
+  color: $text-color;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 1;
+  transition: all ease 0.3s;
+  
+  &:focus {
+    width: 300px;
+    opacity: 1;
+    border: 1px solid $text-color;
+    transition: all ease 0.3s;
+  }
+}

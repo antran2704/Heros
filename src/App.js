@@ -9,25 +9,21 @@ import { createContext, useState } from "react";
 export const Context = createContext();
 function App() {
   const [show, setShow] = useState(false);
-  const [data, setData] = useState({});
   function handleShowModal() {
     setShow(!show);
   }
 
-  function handleGetDataHero(item) {
-    setData(item);
-  }
   return (
     <div className="App">
       <Router>
         <Navbar />
-        <Context.Provider value={{ handleShowModal, handleGetDataHero }}>
+        <Context.Provider value={{ handleShowModal}}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
           </Routes>
         </Context.Provider>
-        <Modal show={show} onClick={handleShowModal} data={data} />
+        <Modal show={show} onClick={handleShowModal}/>
       </Router>
     </div>
   );

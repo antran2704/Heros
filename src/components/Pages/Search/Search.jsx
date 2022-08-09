@@ -9,7 +9,6 @@ function Search() {
     const width = useViewport();
     const {listHeros,search} = useSelector(state => state)
     const [data,setData] = useState([]);
-    console.log(data)
     useEffect(() => {
        const result = listHeros.filter((hero) => {
             return hero.name.toLowerCase().includes(search.toLowerCase());

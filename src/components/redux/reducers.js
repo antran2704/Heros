@@ -16,6 +16,11 @@ const rootReducer = (state = initstate, action) => {
         ...state,
         search: action.payload,
       };
+    case "selectItem":
+      return {
+        ...state,
+        selectItem: action.payload
+      }
     default:
       return state;
   }

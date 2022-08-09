@@ -1,13 +1,20 @@
 import { useContext } from "react";
+import { useDispatch } from "react-redux";
 import { Context } from "../../App";
+import { selectItem } from "../redux/actions";
 import "./Content.scss";
 
 function ContentItem({data}) {
-  const {handleShowModal, handleGetDataHero} = useContext(Context)
+  const dispatch = useDispatch();
+
+  const {handleShowModal} = useContext(Context)
+  function getItem(item) {
+    dispatch(selectItem(item));
+  }
   return (
     <div onClick={() => {
       handleShowModal()
-      handleGetDataHero(data)
+      getItem(data)
     }} className="content__item">
       <img
         className="content__item-img"

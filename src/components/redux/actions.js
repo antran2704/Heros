@@ -13,3 +13,10 @@ export const searchAction = (search) => {
         payload: search
     }
 }
+
+export const selectItem = ((item) => {
+    return {
+        type: "selectItem",
+        payload: item
+    }
+})
